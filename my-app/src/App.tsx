@@ -98,7 +98,9 @@ export function App() {
             .mobile-content img { display: block; max-width: 100%; height: auto; }
             .mobile-hero-photo { width: 100%; height: auto; object-fit: contain; object-position: center; }
             .mobile-flower-image { width: min(78%, 280px); margin: 8px auto 0; }
-            .mobile-drink-photo { width: min(100%, 520px); margin: 0 auto; }
+            .mobile-dinner-photo { width: min(100%, 520px); margin: 0 auto; }
+            .mobile-moto-photo { width: min(100%, 520px); margin: 0 auto; }
+            .mobile-drink-photo { width: min(80%, 410px); margin: 0 auto; }
             .mobile-place-photo { width: min(100%, 520px); margin: 0 auto 14px; }
             .mobile-disco-photo { width: 100%; margin: 0 auto; }
             .mobile-star, .mobile-flower { position: absolute; color: var(--mobile-olive); font-family: 'Cormorant Garamond', serif; font-size: 34px; line-height: 1; }
@@ -205,6 +207,7 @@ export function App() {
             .mobile-rsvp-section { scroll-margin-top: 20px; padding: 48px 24px 32px; background: #e9e6dc; text-align: center; }
             .mobile-rsvp-section h2 { font-size: 40px; }
             .mobile-rsvp-section > p:not(.mobile-script-label) { max-width: 320px; margin: 10px auto 24px; color: #77756b; font-size: 16px; line-height: 1.45; }
+            .mobile-rsvp-form-link { min-height: 50px; padding: 14px 20px; border: 0; background: var(--mobile-olive); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; opacity: .65; cursor: not-allowed; }
             .mobile-rsvp-section form { display: grid; gap: 15px; text-align: left; }
             .mobile-rsvp-section label { display: grid; gap: 7px; color: var(--mobile-olive); font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
             .mobile-rsvp-section input, .mobile-rsvp-section select, .mobile-rsvp-section textarea { width: 100%; border: 1px solid rgba(102,102,64,.2); border-radius: 3px; padding: 13px; background: #fbfaf6; color: var(--mobile-ink); font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 0; text-transform: none; }

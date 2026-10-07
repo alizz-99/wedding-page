@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucía & Álvaro | Nos Casamos</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F7F4EE',
+                        'cream-card': '#FAF8F3',
+                        olive: '#4A5D4E',
+                        'olive-dark': '#38483B',
+                        sand: '#E6DFC8',
+                        gold: '#C8B28B',
+                        charcoal: '#2C2C2C',
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        cursive: ['Alex Brush', 'cursive'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos suaves -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #F7F4EE;
+            color: #2C2C2C;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Estilos personalizados para trazo artesanal / doodle */
+        .sketch-border {
+            border: 1px solid rgba(74, 93, 78, 0.2);
+            border-radius: 20px;
+        }
+
+        .sketch-shadow {
+            box-shadow: 0 10px 25px -5px rgba(74, 93, 78, 0.08);
+        }
+
+        /* Ocultar barra de scroll para estética limpia en móviles */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Animación suave de entrada */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-cream text-charcoal antialiased selection:bg-olive selection:text-white">
+
+    <div class="min-h-screen w-full flex justify-center items-center py-0 md:py-8 px-0 sm:px-4">
+        
+        <!-- Marco simulador de smartphone elegante para PC / Responsive completo en móvil -->
+        <main class="w-full max-w-md bg-cream min-h-screen md:min-h-0 md:rounded-[40px] md:shadow-2xl md:border-[10px] md:border-stone-800 overflow-hidden relative flex flex-col">
+
+            <!-- Dynamic Island o Cámara simulada en pantallas superiores -->
+            <div class="hidden md:flex justify-center pt-3 pb-1 bg-cream sticky top-0 z-50">
+                <div class="w-24 h-4 bg-stone-800 rounded-full"></div>
+            </div>
+
+            <!-- Header de Navegación sutil -->
+            <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md px-6 py-4 flex justify-between items-center border-b border-olive/10">
+                <span class="font-serif text-lg tracking-wider text-olive font-semibold">L & Á</span>
+                <a href="#rsvp" class="text-xs uppercase tracking-widest bg-olive text-white px-4 py-2 rounded-full hover:bg-olive-dark transition">
+                    Confirmar
+                </a>
+            </header>
+
+            <section class="px-6 pt-8 pb-12 text-center flex flex-col items-center justify-center relative">
+                <span class="uppercase tracking-[0.3em] text-xs font-medium text-olive/80 mb-2">Nos casamos</span>
+                <h1 class="font-cursive text-6xl text-olive my-2 leading-tight">Lucía <span class="font-serif text-4xl italic text-gold">&</span> Álvaro</h1>
+                
+                <!-- Ilustración Vectorial Estilo Line-Art Doodle (Mesa de boda con velas y flores) -->
+                <div class="my-6 w-full max-w-[240px] text-olive/80 flex justify-center">
+                    <svg viewBox="0 0 200 180" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-auto drop-shadow-sm">
+                        <!-- Candelabro y velas -->
+                        <path d="M100 110 V50 M80 70 H120 M80 70 V55 M120 70 V55 M100 35 L100 50" />
+                        <!-- Llamas de velas -->
+                        <path d="M100 25 C100 25 103 30 100 35 C97 30 100 25 100 25 Z" fill="#C8B28B" stroke="none"/>
+                        <path d="M80 45 C80 45 82 49 80 53 C78 49 80 45 80 45 Z" fill="#C8B28B" stroke="none"/>
+                        <path d="M120 45 C120 45 122 49 120 53 C118 49 120 45 120 45 Z" fill="#C8B28B" stroke="none"/>
+                        
+                        <!-- Base de Mesa y Mantel -->
+                        <path d="M20 130 Q100 138 180 130" />
+                        <path d="M30 132 V165 M170 132 V165" stroke-dasharray="3 3"/>
+                        
+                        <!-- Copas y Botella -->
+                        <path d="M50 130 L55 105 H65 L70 130 M60 118 V130" />
+                        <path d="M135 130 V95 C135 90 140 85 140 80 V70 H148 V80 C148 85 153 90 153 95 V130" />
+                        <path d="M142 100 H146" />
+
+                        <!-- Platos y Cubiertos -->
+                        <ellipse cx="100" cy="128" rx="20" ry="5" />
+                        <path d="M73 125 V132 M76 125 V132 M124 125 V132" />
+
+                        <!-- Elementos decorativos estilo destellos / estrellas -->
+                        <path d="M30 40 L33 46 L39 49 L33 52 L30 58 L27 52 L21 49 L27 46 Z" fill="#4A5D4E" stroke="none" opacity="0.6"/>
+                        <path d="M165 50 L167 54 L171 56 L167 58 L165 62 L163 58 L159 56 L163 54 Z" fill="#4A5D4E" stroke="none" opacity="0.6"/>
+                        <path d="M150 145 C155 140 165 140 170 145" stroke-dasharray="2 2"/>
+                        <!-- Ramita de olivo -->
+                        <path d="M15 110 Q30 95 45 105" />
+                        <path d="M22 103 C20 98 25 95 25 95 C25 95 28 100 22 103 Z" fill="#4A5D4E" opacity="0.5"/>
+                        <path d="M35 102 C35 96 40 95 40 95 C40 95 41 100 35 102 Z" fill="#4A5D4E" opacity="0.5"/>
+                    </svg>
+                </div>
+
+                <div class="mt-2 text-center">
+                    <p class="font-serif text-2xl tracking-widest text-olive font-medium">25 DE SEPTIEMBRE DE 2027</p>
+                    <p class="text-xs uppercase tracking-widest text-stone-500 mt-1">Sevilla, España</p>
+                </div>
+            </section>
+
+            <section class="px-6 py-8 bg-cream-card sketch-border mx-4 sketch-shadow text-center relative">
+                <div class="mb-4">
+                    <!-- Guirnalda doodle arriba del contador -->
+                    <svg class="w-full h-8 text-olive/40 mx-auto max-w-[200px]" viewBox="0 0 200 30" fill="none" stroke="currentColor">
+                        <path d="M10 5 Q50 25 100 5 Q150 25 190 5" stroke-dasharray="2 2"/>
+                        <circle cx="50" cy="16" r="2" fill="currentColor"/>
+                        <circle cx="100" cy="5" r="2" fill="currentColor"/>
+                        <circle cx="150" cy="16" r="2" fill="currentColor"/>
+                    </svg>
+                    <h2 class="font-serif text-3xl text-olive italic">Cuenta atrás</h2>
+                    <p class="text-[11px] uppercase tracking-widest text-stone-500 mt-1">HASTA EL GRAN DÍA</p>
+                </div>
+
+                <!-- Rediseño del contador -->
+                <div id="countdown" class="grid grid-cols-4 gap-2 my-6">
+                    <div class="bg-cream p-3 rounded-2xl border border-olive/10">
+                        <span id="days" class="block font-serif text-2xl font-bold text-olive">---</span>
+                        <span class="text-[10px] uppercase tracking-wider text-stone-500">Días</span>
+                    </div>
+                    <div class="bg-cream p-3 rounded-2xl border border-olive/10">
+                        <span id="hours" class="block font-serif text-2xl font-bold text-olive">--</span>
+                        <span class="text-[10px] uppercase tracking-wider text-stone-500">Horas</span>
+                    </div>
+                    <div class="bg-cream p-3 rounded-2xl border border-olive/10">
+                        <span id="minutes" class="block font-serif text-2xl font-bold text-olive">--</span>
+                        <span class="text-[10px] uppercase tracking-wider text-stone-500">Min</span>
+                    </div>
+                    <div class="bg-cream p-3 rounded-2xl border border-olive/10">
+                        <span id="seconds" class="block font-serif text-2xl font-bold text-olive">--</span>
+                        <span class="text-[10px] uppercase tracking-wider text-stone-500">Seg</span>
+                    </div>
+                </div>
+
+                <!-- Botones para agregar al calendario -->
+                <div class="flex flex-col sm:flex-row gap-2 justify-center mt-6">
+                    <button id="add-to-calendar-btn" class="inline-flex items-center justify-center gap-2 bg-olive text-white text-xs font-medium uppercase tracking-wider px-5 py-3 rounded-xl hover:bg-olive-dark transition shadow-sm">
+                        <i class="fa-regular fa-calendar-plus"></i>
+                        Añadir al Calendario
+                    </button>
+                </div>
+            </section>
+
+            <section class="px-6 py-12 text-center">
+                <div class="w-12 h-12 mx-auto mb-3 text-olive/60 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+                <h2 class="font-serif text-3xl text-olive italic">¡Y por fin tenemos fecha!</h2>
+                <p class="text-xs leading-relaxed text-stone-600 mt-4 max-w-xs mx-auto font-light">
+                    Llevamos años haciendo planes juntos y este es, sin duda, el más grande. Queremos celebrarlo rodeados de las personas que han formado parte de nuestra historia.
+                </p>
+
+                <!-- Galería de Fotos de la Pareja estilo Polaroid / Fotos -->
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <div class="bg-white p-2 pb-4 rounded-xl shadow-md rotate-[-2deg] transition hover:rotate-0 duration-300">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=400" alt="Lucía y Álvaro" class="w-full h-36 object-cover rounded-lg" onerror="this.src='https://placehold.co/400x300/E6DFC8/4A5D4E?text=Lucia+%26+Alvaro'">
+                        <p class="font-cursive text-xl text-olive mt-2">Los comienzos</p>
+                    </div>
+                    <div class="bg-white p-2 pb-4 rounded-xl shadow-md rotate-[2deg] transition hover:rotate-0 duration-300 mt-4">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=400" alt="Nuestra Historia" class="w-full h-36 object-cover rounded-lg" onerror="this.src='https://placehold.co/400x300/E6DFC8/4A5D4E?text=El+Sí'">
+                        <p class="font-cursive text-xl text-olive mt-2">El Gran Paso</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="px-6 py-10 bg-cream-card sketch-border mx-4 my-4">
+                <div class="text-center mb-8">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold">Dónde nos casamos</span>
+                    <h2 class="font-serif text-3xl text-olive italic mt-1">El Lugar</h2>
+                </div>
+
+                <!-- Ceremonia -->
+                <div class="bg-cream p-5 rounded-2xl mb-6 border border-olive/10 relative text-center">
+                    <div class="w-10 h-10 bg-olive/10 text-olive rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-church text-sm"></i>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest text-stone-500 font-semibold">Ceremonia</span>
+                    <h3 class="font-serif text-xl font-bold text-olive mt-1">Parroquia de Santa Ana</h3>
+                    <p class="text-xs text-stone-600 mt-1">C/ Vázquez de Leca, 1 - Triana, Sevilla</p>
+                    <div class="my-3 font-serif text-2xl font-semibold text-olive-dark">18:30 H</div>
+                    
+                    <button onclick="openMapModal('Parroquia de Santa Ana, Sevilla')" class="inline-flex items-center gap-1.5 text-xs text-olive font-semibold underline underline-offset-4 hover:text-gold transition">
+                        <i class="fa-solid fa-location-dot"></i>
+                        VER EN EL MAPA
+                    </button>
+                </div>
+
+                <!-- Ilustración divisoria line art -->
+                <div class="my-6 text-center text-olive/40">
+                    <svg class="w-24 h-8 mx-auto" viewBox="0 0 100 30" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M10 15 C30 5 40 25 50 15 C60 5 70 25 90 15"/>
+                        <circle cx="50" cy="15" r="3" fill="currentColor"/>
+                    </svg>
+                </div>
+
+                <!-- Recepción -->
+                <div class="bg-cream p-5 rounded-2xl border border-olive/10 relative text-center">
+                    <div class="w-10 h-10 bg-olive/10 text-olive rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-champagne-glasses text-sm"></i>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest text-stone-500 font-semibold">Recepción</span>
+                    <h3 class="font-serif text-xl font-bold text-olive mt-1">Hacienda El Naranjal</h3>
+                    <p class="text-xs text-stone-600 mt-1">Ctra. Espartinas-Umbrete, km 2 - Sevilla</p>
+                    <div class="my-3 font-serif text-2xl font-semibold text-olive-dark">20:30 H</div>
+                    
+                    <button onclick="openMapModal('Hacienda El Naranjal, Espartinas')" class="inline-flex items-center gap-1.5 text-xs text-olive font-semibold underline underline-offset-4 hover:text-gold transition">
+                        <i class="fa-solid fa-location-dot"></i>
+                        VER EN EL MAPA
+                    </button>
+                </div>
+            </section>
+
+            <section class="px-6 py-12">
+                <div class="text-center mb-8">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold">Lo que tenemos preparado</span>
+                    <h2 class="font-serif text-3xl text-olive italic mt-1">Programa del día</h2>
+                </div>
+
+                <div class="relative pl-6 border-l-2 border-olive/20 space-y-8 my-6 ml-4">
+                    
+                    <!-- Evento 1 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-olive border-4 border-cream"></div>
+                        <span class="font-serif font-bold text-olive text-sm">18:00 H</span>
+                        <h4 class="font-semibold text-sm text-stone-800">Llegada a Santa Ana</h4>
+                        <p class="text-xs text-stone-600 mt-0.5">Nos vemos en las puertas de la parroquia en el corazón de Triana.</p>
+                    </div>
+
+                    <!-- Evento 2 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-olive border-4 border-cream"></div>
+                        <span class="font-serif font-bold text-olive text-sm">18:30 H</span>
+                        <h4 class="font-semibold text-sm text-stone-800">La Ceremonia</h4>
+                        <p class="text-xs text-stone-600 mt-0.5">Nos daremos el 'sí, quiero' en la iglesia más antigua de Sevilla.</p>
+                    </div>
+
+                    <!-- Evento 3 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-olive border-4 border-cream"></div>
+                        <span class="font-serif font-bold text-olive text-sm">20:30 H</span>
+                        <h4 class="font-semibold text-sm text-stone-800">Cóctel de bienvenida</h4>
+                        <p class="text-xs text-stone-600 mt-0.5">Aperitivo y copas bajo los naranjos de la hacienda.</p>
+                    </div>
+
+                    <!-- Evento 4 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-olive border-4 border-cream"></div>
+                        <span class="font-serif font-bold text-olive text-sm">22:00 H</span>
+                        <h4 class="font-semibold text-sm text-stone-800">Cena</h4>
+                        <p class="text-xs text-stone-600 mt-0.5">Cena servida en el patio empedrado al fresco de la noche.</p>
+                    </div>
+
+                    <!-- Evento 5 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-olive border-4 border-cream"></div>
+                        <span class="font-serif font-bold text-olive text-sm">00:30 H</span>
+                        <h4 class="font-semibold text-sm text-stone-800">Barra libre y baile</h4>
+                        <p class="text-xs text-stone-600 mt-0.5">¡A abrir la pista de baile hasta que el cuerpo aguante!</p>
+                    </div>
+
+                    <!-- Evento 6 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-olive border-4 border-cream"></div>
+                        <span class="font-serif font-bold text-olive text-sm">04:00 H</span>
+                        <h4 class="font-semibold text-sm text-stone-800">Respón / Recena</h4>
+                        <p class="text-xs text-stone-600 mt-0.5">Jamón ibérico, quesos y montaditos para recargar energías.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="px-6 py-10 bg-cream-card sketch-border mx-4 my-4 text-center">
+                <div class="w-10 h-10 bg-olive/10 text-olive rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-bus text-sm"></i>
+                </div>
+                <span class="text-xs uppercase tracking-widest text-gold font-semibold">Cómo llegar</span>
+                <h2 class="font-serif text-3xl text-olive italic mt-1">Transporte</h2>
+                
+                <p class="text-xs text-stone-600 mt-3 leading-relaxed max-w-xs mx-auto">
+                    Pondremos a vuestra disposición autobuses de ida y vuelta desde el centro de Sevilla para que podáis disfrutar sin preocupaciones.
+                </p>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+                    <div class="bg-cream p-3 rounded-xl border border-olive/10">
+                        <span class="text-[10px] uppercase tracking-widest text-stone-500 block">Salida Autobús</span>
+                        <span class="font-serif font-bold text-olive text-xl">19:45 H</span>
+                        <p class="text-[10px] text-stone-500 mt-1">Plaza de Cuba (Sevilla)</p>
+                    </div>
+                    <div class="bg-cream p-3 rounded-xl border border-olive/10">
+                        <span class="text-[10px] uppercase tracking-widest text-stone-500 block">Regreso / Vuelta</span>
+                        <span class="font-serif font-bold text-olive text-xl">05:00 H</span>
+                        <p class="text-[10px] text-stone-500 mt-1">Hacienda → Sevilla</p>
+                    </div>
+                </div>
+
+                <div class="mt-4 p-3 bg-amber-50/50 rounded-xl border border-amber-200/50 text-left flex items-start gap-2">
+                    <i class="fa-solid fa-square-parking text-olive mt-0.5 text-xs"></i>
+                    <p class="text-[11px] text-stone-600">
+                        <strong>Coches particulares:</strong> La hacienda dispone de parking privado gratuito.
+                    </p>
+                </div>
+            </section>
+
+            <section id="rsvp" class="px-6 py-12 bg-olive text-cream rounded-t-[35px] mt-6">
+                <div class="text-center mb-6">
+                    <span class="text-xs uppercase tracking-widest text-sand font-semibold">Confirmación</span>
+                    <h2 class="font-serif text-4xl text-cream italic mt-1">¿Nos acompañas?</h2>
+                    <p class="text-xs text-sand/80 mt-2">Por favor, confirma tu asistencia antes del 1 de Agosto de 2027.</p>
+                </div>
+
+                <form id="rsvp-form" onsubmit="handleRSVPSubmit(event)" class="space-y-4 text-stone-800">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-sand mb-1">Nombre Completo *</label>
+                        <input type="text" required placeholder="Ej. María García" class="w-full px-4 py-3 rounded-xl bg-cream text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-gold text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-sand mb-1">Asistencia *</label>
+                        <select required class="w-full px-4 py-3 rounded-xl bg-cream text-stone-800 focus:outline-none focus:ring-2 focus:ring-gold text-sm">
+                            <option value="si">¡Sí, allí estaré celebrando!</option>
+                            <option value="no">Lamentablemente no podré asistir</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-sand mb-1">Acompañantes</label>
+                        <input type="number" min="0" max="5" value="0" class="w-full px-4 py-3 rounded-xl bg-cream text-stone-800 focus:outline-none focus:ring-2 focus:ring-gold text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-sand mb-1">¿Necesitarás autobús?</label>
+                        <select class="w-full px-4 py-3 rounded-xl bg-cream text-stone-800 focus:outline-none focus:ring-2 focus:ring-gold text-sm">
+                            <option value="no">No, iré por mi cuenta</option>
+                            <option value="ida-vuelta">Sí, Ida y Vuelta</option>
+                            <option value="solo-vuelta">Solo Vuelta</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-sand mb-1">Alergias o Intolerancias</label>
+                        <textarea rows="2" placeholder="Vegetariano, celíaco, alergias..." class="w-full px-4 py-3 rounded-xl bg-cream text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-gold text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-gold hover:bg-yellow-600 text-stone-900 font-semibold text-xs uppercase tracking-widest rounded-xl transition shadow-lg mt-4">
+                        Enviar Confirmación
+                    </button>
+                </form>
+
+                <footer class="mt-12 text-center text-xs text-sand/60 border-t border-cream/10 pt-6">
+                    <p class="font-cursive text-2xl text-cream mb-1">Lucía & Álvaro</p>
+                    <p>25.09.2027 • Sevilla</p>
+                </footer>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Modal para Mapa -->
+    <div id="map-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex justify-center items-center p-4">
+        <div class="bg-cream w-full max-w-sm rounded-3xl p-6 shadow-2xl relative text-center">
+            <button onclick="closeMapModal()" class="absolute top-4 right-4 text-stone-500 hover:text-stone-800">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="w-12 h-12 bg-olive/10 text-olive rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fa-solid fa-map-location-dot text-lg"></i>
+            </div>
+            <h3 id="modal-title" class="font-serif text-2xl text-olive font-bold mb-2">Ubicación</h3>
+            <p id="modal-address" class="text-xs text-stone-600 mb-6">Dirección de la ubicación seleccionada</p>
+
+            <div class="space-y-3">
+                <a id="google-maps-link" href="#" target="_blank" class="w-full flex items-center justify-center gap-2 bg-olive text-white py-3 rounded-xl text-xs uppercase tracking-wider font-medium hover:bg-olive-dark transition">
+                    <i class="fa-brands fa-google"></i>
+                    Abrir en Google Maps
+                </a>
+                <button onclick="closeMapModal()" class="w-full py-2 text-xs text-stone-500 uppercase tracking-wider">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación RSVP -->
+    <div id="rsvp-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex justify-center items-center p-4">
+        <div class="bg-cream w-full max-w-sm rounded-3xl p-6 shadow-2xl text-center">
+            <div class="w-16 h-16 bg-olive text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <h3 class="font-serif text-3xl text-olive italic mb-2">¡Gracias por confirmar!</h3>
+            <p class="text-xs text-stone-600 leading-relaxed mb-6">
+                Hemos recibido tu respuesta correctamente. ¡Estamos deseando compartir este día tan especial contigo!
+            </p>
+            <button onclick="closeRSVPModal()" class="w-full bg-olive text-white py-3 rounded-xl text-xs uppercase tracking-wider font-medium hover:bg-olive-dark transition">
+                Entendido
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Fecha objetivo de la boda
+        const weddingDate = new Date("September 25, 2027 18:30:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<div class='col-span-4 text-olive font-serif text-xl'>¡Llegó el gran día!</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Integración con el Calendario (.ics o Google Calendar)
+        document.getElementById('add-to-calendar-btn').addEventListener('click', function() {
+            const title = encodeURIComponent("Boda de Lucía y Álvaro");
+            const details = encodeURIComponent("¡Nos casamos! Acompáñanos en nuestro gran día.");
+            const location = encodeURIComponent("Parroquia de Santa Ana, Sevilla");
+            const startDate = "20270925T183000Z";
+            const endDate = "20270926T050000Z";
+
+            // Enlace directo a Google Calendar
+            const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
+            window.open(googleCalUrl, '_blank');
+        });
+
+        // Lógica para Modal de Mapas
+        function openMapModal(locationQuery) {
+            const modal = document.getElementById('map-modal');
+            const title = document.getElementById('modal-title');
+            const address = document.getElementById('modal-address');
+            const link = document.getElementById('google-maps-link');
+
+            title.innerText = locationQuery.split(',')[0];
+            address.innerText = locationQuery;
+            link.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationQuery)}`;
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeMapModal() {
+            document.getElementById('map-modal').classList.add('hidden');
+        }
+
+        // Lógica para Formulario RSVP
+        function handleRSVPSubmit(event) {
+            event.preventDefault();
+            document.getElementById('rsvp-modal').classList.remove('hidden');
+            document.getElementById('rsvp-form').reset();
+        }
+
+        function closeRSVPModal() {
+            document.getElementById('rsvp-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

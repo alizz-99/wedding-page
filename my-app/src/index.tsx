@@ -6,6 +6,7 @@ const server = Bun.serve({
   async fetch(req) {
     const pathname = new URL(req.url).pathname;
     const imageName = pathname.match(/^\/imgs\/([a-z0-9_-]+\.png)$/i)?.[1];
+    const galleryImageName = pathname.match(/^\/gallery\/(pedida\d+\.jpe?g)$/i)?.[1];
 
     if (imageName) {
       const image = Bun.file(new URL(`./imgs/${imageName}`, import.meta.url));
@@ -13,6 +14,16 @@ const server = Bun.serve({
       if (await image.exists()) {
         return new Response(image, {
           headers: { "Content-Type": "image/png" },
+        });
+      }
+    }
+
+    if (galleryImageName) {
+      const image = Bun.file(new URL(`./gallery/${galleryImageName}`, import.meta.url));
+
+      if (await image.exists()) {
+        return new Response(image, {
+          headers: { "Content-Type": "image/jpeg" },
         });
       }
     }
