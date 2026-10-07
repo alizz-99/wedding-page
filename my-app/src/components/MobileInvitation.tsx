@@ -165,11 +165,27 @@ export function MobileInvitation({ onRSVPSubmit }: MobileInvitationProps) {
 
         <section className="mobile-story">
           <span className="mobile-flower mobile-flower-one">♡</span>
-          <h2 style={mobileScriptFont}>...azkenean badugu eguna!...</h2>
+          <h2 style={mobileScriptFont}>azkenean badugu eguna!</h2>
           <p>(algo escrito aqui)</p>
-          <div className="mobile-gallery">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=85&w=650" alt="Una pareja celebra su boda" />
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=85&w=650" alt="Una pareja comparte un momento especial" />
+          <div className="mobile-gallery" role="region" aria-label="Galería de fotos">
+            <div className="mobile-gallery-track">
+              <div className="mobile-gallery-group">
+                <img src="./gallery/pedida1.jpeg" alt="Una pareja celebra su boda" />
+                <img src="./gallery/pedida2.jpeg" alt="Una pareja comparte un momento especial" />
+                <img src="./gallery/pedida3.jpeg" alt="Una pareja disfruta de su celebración" />
+                <img src="./gallery/pedida4.jpeg" alt="Una celebración de boda al aire libre" />
+                <img src="./gallery/pedida5.jpeg" alt="Una pareja sonríe en su boda" />
+                <img src="./gallery/pedida6.jpeg" alt="Una pareja feliz en su boda" />
+              </div>
+              <div className="mobile-gallery-group" aria-hidden="true">
+                <img src="./gallery/pedida1.jpeg" alt="" />
+                <img src="./gallery/pedida2.jpeg" alt="" />
+                <img src="./gallery/pedida3.jpeg" alt="" />
+                <img src="./gallery/pedida4.jpeg" alt="" />
+                <img src="./gallery/pedida5.jpeg" alt="" />
+                <img src="./gallery/pedida6.jpeg" alt="" />
+              </div>
+            </div>
           </div>
         </section>
 

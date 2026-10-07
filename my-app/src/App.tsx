@@ -154,8 +154,12 @@ export function App() {
             .mobile-story { position: relative; padding: 34px 24px 48px; text-align: center; }
             .mobile-story h2 { margin: 0 0 20px; font-size: 46px; }
             .mobile-story > p { max-width: 430px; margin: 0 auto 28px; color: #706e64; font-size: 18px; line-height: 1.55; }
-            .mobile-gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
-            .mobile-gallery img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+            .mobile-gallery { overflow: hidden; width: 100%; }
+            .mobile-gallery-track { display: flex; width: max-content; animation: mobile-gallery-scroll 48s linear infinite; }
+            .mobile-gallery:hover .mobile-gallery-track { animation-play-state: paused; }
+            .mobile-gallery-group { display: flex; flex: none; gap: 12px; padding-right: 12px; }
+            .mobile-gallery img { width: min(78vw, 320px); height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+            @keyframes mobile-gallery-scroll { to { transform: translateX(-50%); } }
             .mobile-flower-one { top: 58px; left: 22px; transform: rotate(-15deg); }
             .mobile-venues { padding: 16px 16px 30px; }
             .mobile-section-heading { position: relative; padding: 12px 10px 34px; text-align: center; }
@@ -213,7 +217,7 @@ export function App() {
             .mobile-content { max-width: 760px; }
             .mobile-hero { padding-right: 48px; padding-left: 48px; }
             .mobile-hero-art { max-width: 410px; }
-            .mobile-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .mobile-gallery img { width: min(42vw, 320px); }
             .mobile-venues { max-width: 700px; margin: 0 auto; }
             .mobile-venue-card { max-width: 570px; margin-right: auto; margin-left: auto; }
             .mobile-program { max-width: 620px; margin: 0 auto; }
@@ -221,6 +225,13 @@ export function App() {
             .mobile-transport, .mobile-rsvp-section { padding-right: 56px; padding-left: 56px; }
             .mobile-rsvp-section form { max-width: 560px; margin: 0 auto; }
             .mobile-rsvp-fixed { right: auto; left: 50%; width: min(100%, 760px); transform: translateX(-50%); border-right: 1px solid rgba(102,102,64,.12); border-left: 1px solid rgba(102,102,64,.12); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .mobile-gallery { overflow: visible; }
+            .mobile-gallery-track { display: block; width: 100%; animation: none; }
+            .mobile-gallery-group { display: grid; grid-template-columns: 1fr; gap: 12px; padding: 0; }
+            .mobile-gallery-group[aria-hidden="true"] { display: none; }
+            .mobile-gallery img { width: 100%; }
           }
         `}</style>
       </head>
