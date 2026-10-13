@@ -148,6 +148,7 @@ export function MobileInvitation({ onRSVPSubmit }: MobileInvitationProps) {
             `,
           }}
         />
+        <img className="mobile-hero-photo mobile-dance-photo" src="./imgs/baile.png" alt="" />
 
         <section id="mobile-rsvp" className="mobile-rsvp-section">
           {/* <p className="mobile-script-label" style={mobileScriptFont}>Atsegin handiz ikusiko dugu elkar</p> */}

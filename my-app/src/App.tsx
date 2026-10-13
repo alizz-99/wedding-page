@@ -188,6 +188,7 @@ export function App() {
             .mobile-drink-photo { width: min(70%, 410px); margin: 0 auto; }
             .mobile-place-photo { width: min(100%, 520px); margin: 0 auto 14px; }
             .mobile-disco-photo { width: 100%; margin: 0 auto; }
+            .mobile-dance-photo { width: min(100%, 320px); margin: 0 auto; margin-bottom: 24px; }
             .mobile-star, .mobile-flower { position: absolute; color: var(--mobile-olive); font-family: 'Cormorant Garamond', serif; font-size: 34px; line-height: 1; }
             .mobile-star-one { top: 44px; left: 28px; }
             .mobile-star-two { right: 20px; bottom: 52px; font-size: 43px; }

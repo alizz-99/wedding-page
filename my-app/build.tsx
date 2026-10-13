@@ -17,6 +17,7 @@ const publishedImages = new Set([
   "disco.png",
   "cena.png",
   "moto.png",
+  "baile.png",
 ]);
 
 await mkdir(outputImagesDirectory, { recursive: true });
