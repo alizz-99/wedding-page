@@ -126,7 +126,7 @@ export function MobileInvitation({ onRSVPSubmit }: MobileInvitationProps) {
             <h2 style={mobileScriptFont}>Garraioa</h2>
             <p>Nola iritsi</p>
           </header>
-          <p className="mobile-transport-intro">Autobusak Usurbil eta Donostitik aterako dira. Ibilbidea 25 minutu ingurukoa da.</p>
+          <p className="mobile-transport-intro">Autobusak Usurbil eta Donostitik aterako dira (xehetasunak aurrerago). Ibilbidea 25 minutu ingurukoa da.</p>
           <div className="mobile-transport-times">
             <div><p>Irteera</p><strong>17:15</strong></div>
             <div><p>Itzulera</p><strong>02:00</strong></div>
