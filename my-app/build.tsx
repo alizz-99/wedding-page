@@ -9,7 +9,15 @@ const imagesDirectory = join(appDirectory, "src", "imgs");
 const galleryDirectory = join(appDirectory, "src", "gallery");
 const outputImagesDirectory = join(outputDirectory, "imgs");
 const outputGalleryDirectory = join(outputDirectory, "gallery");
-const publishedImages = new Set(["flor.png", "luces.png", "topa.png", "sitio.png", "disco.png"]);
+const publishedImages = new Set([
+  "flor.png",
+  "luces.png",
+  "topa.png",
+  "sitio.png",
+  "disco.png",
+  "cena.png",
+  "moto.png",
+]);
 
 await mkdir(outputImagesDirectory, { recursive: true });
 await mkdir(outputGalleryDirectory, { recursive: true });

@@ -63,13 +63,13 @@ export function App() {
               font-family: 'Cormorant Garamond', serif;
               padding-bottom: 56px;
             }
-            .mobile-content { width: 100%; max-width: 520px; margin: 0 auto; overflow: hidden; }
+            .mobile-content { width: 100%; max-width: 520px; margin: 0 auto; overflow-x: clip; }
             .mobile-hero {
               position: relative;
               display: flex;
               flex-direction: column;
               align-items: center;
-              padding: max(72px, env(safe-area-inset-top)) 22px 30px;
+              padding: max(72px, env(safe-area-inset-top)) 22px 22px;
               text-align: center;
             }
             .mobile-kicker, .mobile-date, .mobile-section-heading > p,
@@ -89,7 +89,7 @@ export function App() {
               margin: 0;
               color: var(--mobile-ink);
               font-family: 'Alex Brush', cursive;
-              font-size: 57px;
+              font-size: 50px;
               font-weight: 400;
               line-height: .86;
             }
@@ -97,17 +97,102 @@ export function App() {
             .mobile-hero-art { width: min(100%, 355px); height: auto; flex: 1 1 auto; min-height: 300px; max-height: 445px; margin: 12px auto 22px; color: var(--mobile-ink); }
             .mobile-content img { display: block; max-width: 100%; height: auto; }
             .mobile-hero-photo { width: 100%; height: auto; object-fit: contain; object-position: center; }
-            .mobile-flower-image { width: min(78%, 280px); margin: 8px auto 0; }
-            .mobile-dinner-photo { width: min(100%, 520px); margin: 0 auto; }
-            .mobile-moto-photo { width: min(100%, 520px); margin: 0 auto; }
-            .mobile-drink-photo { width: min(80%, 410px); margin: 0 auto; }
+            .mobile-flower-art { position: relative; width: min(100%, 300px); margin: 8px auto; }
+            .mobile-flower-image { width: 100%; margin: 0; }
+            .mobile-art-color, .mobile-art-candle-glow {
+              position: absolute;
+              z-index: 1;
+              display: block;
+              pointer-events: none;
+            }
+            .mobile-art-color {
+              width: 7%;
+              height: 3.5%;
+              border-radius: 50%;
+              background: radial-gradient(ellipse, rgba(239, 218, 110, .78) 0 24%, rgba(239, 218, 110, .38) 52%, transparent 76%);
+              mix-blend-mode: multiply;
+            }
+            .mobile-art-flower-one { top: 37%; left: 19%; }
+            .mobile-art-flower-two { top: 35%; left: 27%; }
+            .mobile-art-flower-three { top: 39%; left: 37%; }
+            .mobile-art-candle-glow {
+              width: 7%;
+              height: 6%;
+              border-radius: 50%;
+              background: radial-gradient(ellipse, rgba(255, 224, 110, .9) 0 15%, rgba(255, 220, 95, .4) 40%, transparent 76%);
+              filter: blur(2px);
+              animation: mobile-candle-glow 2.4s ease-in-out infinite alternate;
+            }
+            .mobile-art-candle-one { top: 37%; left: 75%; }
+            .mobile-art-candle-two { top: 43%; left: 82%; animation-delay: .6s; }
+            @keyframes mobile-candle-glow {
+              from { opacity: .55; transform: scale(.88); }
+              to { opacity: 1; transform: scale(1.12); }
+            }
+            .mobile-hero-sparkle {
+              position: absolute;
+              z-index: 1;
+              color: #c4a75d;
+              font-family: 'Cormorant Garamond', serif;
+              font-size: 19px;
+              line-height: 1;
+              text-shadow: 0 0 6px rgba(255, 238, 173, .9);
+              animation: mobile-sparkle 2.8s ease-in-out infinite;
+              pointer-events: none;
+            }
+            .mobile-hero-sparkle-one { top: 27%; left: 38%; }
+            .mobile-hero-sparkle-two { top: 24%; left: 67%; font-size: 15px; animation-delay: .9s; }
+            .mobile-hero-sparkle-three { top: 38%; left: 70%; font-size: 13px; animation-delay: 1.7s; }
+            @keyframes mobile-sparkle {
+              0%, 100% { opacity: .35; transform: scale(.7) rotate(0deg); }
+              50% { opacity: 1; transform: scale(1.15) rotate(18deg); }
+            }
+            .mobile-dinner-photo { width: min(100%, 320px); margin: 0 auto; }
+            .mobile-moto-track {
+              width: calc(100% + 48px);
+              margin: 0 -24px 12px;
+              overflow: clip;
+            }
+            .mobile-moto-photo {
+              width: min(100%, 145px);
+              margin: 0 auto;
+              opacity: 0;
+              transform: translateX(-160%);
+            }
+            .mobile-moto-photo.mobile-moto-driving {
+              animation: mobile-moto-drive 8s ease-in-out infinite;
+            }
+            .mobile-moto-photo.mobile-moto-static {
+              opacity: 1;
+              transform: none;
+            }
+            @keyframes mobile-moto-drive {
+              0% { opacity: 0; transform: translateX(-160%); }
+              10% { opacity: 1; transform: translateX(-120%); }
+              40% { opacity: 1; transform: translateX(-20%); }
+              75% { opacity: 1; transform: translateX(100%); }
+              90% { opacity: 0; transform: translateX(160%); }
+              100% { opacity: 0; transform: translateX(180%); }
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .mobile-moto-photo.mobile-moto-driving,
+              .mobile-moto-photo.mobile-moto-static {
+                animation: none;
+                opacity: 1;
+                transform: none;
+              }
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .mobile-hero-sparkle, .mobile-art-candle-glow, .mobile-moto-photo { animation: none; opacity: .8; }
+            }
+            .mobile-drink-photo { width: min(70%, 410px); margin: 0 auto; }
             .mobile-place-photo { width: min(100%, 520px); margin: 0 auto 14px; }
             .mobile-disco-photo { width: 100%; margin: 0 auto; }
             .mobile-star, .mobile-flower { position: absolute; color: var(--mobile-olive); font-family: 'Cormorant Garamond', serif; font-size: 34px; line-height: 1; }
             .mobile-star-one { top: 44px; left: 28px; }
             .mobile-star-two { right: 20px; bottom: 52px; font-size: 43px; }
-            .mobile-date { margin: 0 34px; color: var(--mobile-olive); font-size: 12px; }
-            .mobile-countdown-wrap { position: relative; padding: 4px 0 28px; text-align: center; }
+            .mobile-date { margin: 34px 34px; color: var(--mobile-olive); font-size: 12px; }
+            .mobile-countdown-wrap { position: relative; padding: 4px 0; text-align: center; }
             .mobile-garland { display: block; width: 100%; height: auto; max-height: 130px; margin: -8px auto 30px; color: var(--mobile-olive); stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
             .mobile-countdown-wrap .countdown-card {
               margin: 0 !important;
@@ -153,7 +238,7 @@ export function App() {
               letter-spacing: .14em;
             }
             .mobile-toast-art { display: block; width: 170px; height: auto; margin: 56px auto 18px; color: var(--mobile-olive); }
-            .mobile-story { position: relative; padding: 34px 24px 48px; text-align: center; }
+            .mobile-story { position: relative; padding: 24px 24px 48px; text-align: center; }
             .mobile-story h2 { margin: 0 0 20px; font-size: 46px; }
             .mobile-story > p { max-width: 430px; margin: 0 auto 28px; color: #706e64; font-size: 18px; line-height: 1.55; }
             .mobile-gallery { overflow: hidden; width: 100%; }
@@ -162,9 +247,9 @@ export function App() {
             .mobile-gallery-group { display: flex; flex: none; gap: 12px; padding-right: 12px; }
             .mobile-gallery img { width: min(78vw, 320px); height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
             @keyframes mobile-gallery-scroll { to { transform: translateX(-50%); } }
-            .mobile-flower-one { top: 58px; left: 22px; transform: rotate(-15deg); }
+            .mobile-flower-one { top: 18px; left: 22px; transform: rotate(-15deg); }
             .mobile-venues { padding: 16px 16px 30px; }
-            .mobile-section-heading { position: relative; padding: 12px 10px 34px; text-align: center; }
+            .mobile-section-heading { position: relative; padding: 12px 10px 12px; text-align: center; }
             .mobile-section-heading .mobile-star { top: 0; left: 20%; }
             .mobile-section-heading .mobile-flower { right: 4%; bottom: 31px; }
             .mobile-section-heading h2 { margin: 0; font-size: 45px; }
@@ -212,8 +297,8 @@ export function App() {
             .mobile-rsvp-section label { display: grid; gap: 7px; color: var(--mobile-olive); font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
             .mobile-rsvp-section input, .mobile-rsvp-section select, .mobile-rsvp-section textarea { width: 100%; border: 1px solid rgba(102,102,64,.2); border-radius: 3px; padding: 13px; background: #fbfaf6; color: var(--mobile-ink); font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 0; text-transform: none; }
             .mobile-rsvp-section form > button { min-height: 50px; border: 0; background: var(--mobile-olive); color: white; font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
-            .mobile-rsvp-section footer { display: grid; gap: 5px; margin-top: 36px; padding-top: 18px; border-top: 1px solid rgba(102,102,64,.18); color: var(--mobile-olive); font-family: 'Alex Brush', cursive; font-size: 27px; }
-            .mobile-rsvp-section footer span { color: #88877b; font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+            .mobile-rsvp-section footer { display: grid; gap: 5px; margin-top: 36px; padding-top: 18px; border-top: 1px solid rgba(102,102,64,.18); color: var(--mobile-olive); font-family: 'Alex Brush', cursive; font-size: 10px; }
+            .mobile-rsvp-section footer span { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
             .mobile-rsvp-fixed { position: fixed; z-index: 45; right: 0; bottom: 0; left: 0; display: flex; min-height: 54px; align-items: center; justify-content: center; padding: 10px 16px max(10px, env(safe-area-inset-bottom)); border-top: 1px solid rgba(102,102,64,.12); background: rgba(248,246,240,.96); color: var(--mobile-olive); font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: .16em; text-decoration: none; text-transform: uppercase; backdrop-filter: blur(10px); }
 
           @media (min-width: 768px) {

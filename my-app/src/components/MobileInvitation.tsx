@@ -16,11 +16,21 @@ export function MobileInvitation({ onRSVPSubmit }: MobileInvitationProps) {
       <div className="mobile-content">
         <section className="mobile-hero">
           <span className="mobile-star mobile-star-one">☆</span>
-          <p className="mobile-kicker">Ezkontzera goaz</p>
+          <p className="mobile-kicker">EZKONTZERA GOAZ</p>
           <h1 className="mobile-names" style={mobileScriptFont}>Maddalen <span>◦</span><br />Ainhoa</h1>
-          <img className="mobile-hero-photo mobile-flower-image" src="./imgs/flor.png" alt="" />
+          <div className="mobile-flower-art">
+            <img className="mobile-hero-photo mobile-flower-image" src="./imgs/flor.png" alt="" />
+            <span className="mobile-art-color mobile-art-flower-one" aria-hidden="true" />
+            <span className="mobile-art-color mobile-art-flower-two" aria-hidden="true" />
+            <span className="mobile-art-color mobile-art-flower-three" aria-hidden="true" />
+            <span className="mobile-art-candle-glow mobile-art-candle-one" aria-hidden="true" />
+            <span className="mobile-art-candle-glow mobile-art-candle-two" aria-hidden="true" />
+            <span className="mobile-hero-sparkle mobile-hero-sparkle-one" aria-hidden="true">✦</span>
+            <span className="mobile-hero-sparkle mobile-hero-sparkle-two" aria-hidden="true">✧</span>
+            <span className="mobile-hero-sparkle mobile-hero-sparkle-three" aria-hidden="true">✦</span>
+          </div>
           <span className="mobile-star mobile-star-two">☆</span>
-          <p className="mobile-date">2027 uztailak 9</p>
+          <p className="mobile-date">2027KO UZTAILAK 9</p>
         </section>
         <section className="mobile-countdown-wrap">
           <img className="mobile-hero-photo mobile-disco-photo" src="./imgs/luces.png" alt="" />
@@ -30,8 +40,8 @@ export function MobileInvitation({ onRSVPSubmit }: MobileInvitationProps) {
 
         <section className="mobile-story">
           <span className="mobile-flower mobile-flower-one">♡</span>
-          <h2 style={mobileScriptFont}>azkenean badugu eguna!</h2>
-          <p>(algo escrito aqui)</p>
+          {/* <h2 style={mobileScriptFont}>azkenean badugu eguna!</h2> */}
+          <p style={{ marginBottom: '20px' }}>Bai, ezkondu egingo gara! Eta egun hau ospatzeko, gure inguruko jende onenaz inguratu nahi dugu. Beraz, gorde eguna, prestatu ospatzeko gogoa eta zatozte gurekin egun eder bat pasatzera!</p>
           <div className="mobile-gallery" role="region" aria-label="Galería de fotos">
             <div className="mobile-gallery-track">
               <div className="mobile-gallery-group">
@@ -70,7 +80,7 @@ export function MobileInvitation({ onRSVPSubmit }: MobileInvitationProps) {
           </article> */}
           <img className="mobile-hero-photo mobile-place-photo" src="./imgs/sitio.png" alt="Ilustración de Hika Txakolindegia" />
           <article className="mobile-venue-card">
-            <p className="mobile-script-label" style={mobileScriptFont}>Harrera</p>
+            {/* <p className="mobile-script-label" style={mobileScriptFont}>Harrera</p> */}
             <h3>Hika Txakolindegia</h3>
             <p className="mobile-address">Otelarre auzoa 40, 20150 Billabona, Gipuzkoa</p>
             <p className="mobile-time">18:00</p>
@@ -99,28 +109,50 @@ export function MobileInvitation({ onRSVPSubmit }: MobileInvitationProps) {
           </ol>
         </section>
 
-        <section className="mobile-feast-art">
+        {/* <section className="mobile-feast-art">
           <span className="mobile-cake-doodle">♡</span>
           <img className="mobile-hero-photo mobile-dinner-photo" src="./imgs/cena.png" alt="" />
-        </section>
+        </section> */}
 
         <section className="mobile-transport">
-          <img className="mobile-hero-photo mobile-moto-photo" src="./imgs/moto.png" alt="" />
+          <div className="mobile-moto-track">
+            <img
+              className="mobile-hero-photo mobile-moto-photo"
+              src="./imgs/moto.png"
+              alt=""
+            />
+          </div>
           <header className="mobile-section-heading">
             <h2 style={mobileScriptFont}>Garraioa</h2>
             <p>Nola iritsi</p>
           </header>
-          <p className="mobile-transport-intro">Autobusak Usurbiletik eta Donostitik aterako dira. Ibilbidea 25 minutu ingurukoa da.</p>
+          <p className="mobile-transport-intro">Autobusak Usurbil eta Donostitik aterako dira. Ibilbidea 25 minutu ingurukoa da.</p>
           <div className="mobile-transport-times">
             <div><p>Irteera</p><strong>17:15</strong></div>
             <div><p>Itzulera</p><strong>02:00</strong></div>
           </div>
         </section>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              const transport = document.querySelector(".mobile-transport");
+              const moto = document.querySelector(".mobile-moto-photo");
+              if (transport && moto && "IntersectionObserver" in window) {
+                const observer = new IntersectionObserver(([entry]) => {
+                  moto.classList.toggle("mobile-moto-driving", entry.isIntersecting);
+                }, { threshold: 0 });
+                observer.observe(transport);
+              } else if (moto) {
+                moto.classList.add("mobile-moto-static");
+              }
+            `,
+          }}
+        />
 
         <section id="mobile-rsvp" className="mobile-rsvp-section">
-          <p className="mobile-script-label" style={mobileScriptFont}>Atsegin handiz ikusiko dugu elkar</p>
+          {/* <p className="mobile-script-label" style={mobileScriptFont}>Atsegin handiz ikusiko dugu elkar</p> */}
           <h2 style={mobileScriptFont}>Ospatzera al zatoz?</h2>
-          <p>Etortzekoa bazara, jakinarazi 2027ko ekainaren 1a baino lehen</p>
+          <p style={{ marginBottom: '20px' }}>Jakinarazi 2027ko ekainaren 1a baino lehen!</p>
           <button className="mobile-rsvp-form-link" type="button" disabled>
             Google Forma laster
           </button>

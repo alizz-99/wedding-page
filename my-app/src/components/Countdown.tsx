@@ -55,17 +55,6 @@ export function Countdown({ targetDate, mobile = false }: CountdownProps) {
   return (
     <section className="countdown-card px-6 py-8 bg-[#FAF8F3] sketch-border mx-4 sketch-shadow text-center relative">
       <div className="mb-4">
-        <svg
-          className="w-full h-8 text-[#4A5D4E]/40 mx-auto max-w-[200px]"
-          viewBox="0 0 200 30"
-          fill="none"
-          stroke="currentColor"
-        >
-          <path d="M10 5 Q50 25 100 5 Q150 25 190 5" strokeDasharray="2 2" />
-          <circle cx="50" cy="16" r="2" fill="currentColor" />
-          <circle cx="100" cy="5" r="2" fill="currentColor" />
-          <circle cx="150" cy="16" r="2" fill="currentColor" />
-        </svg>
         <h2
           className="font-serif text-3xl text-[#4A5D4E] italic"
           style={mobile ? { fontFamily: '"Alex Brush", "Snell Roundhand", "Apple Chancery", cursive' } : undefined}
